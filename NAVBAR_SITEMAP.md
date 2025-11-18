@@ -15,6 +15,7 @@
 #### 2. **Products** (Dropdown)
    - Pathwell Connect Carrier Hub → `/products/carrier-hub`
    - Pathwell Connect Freight Exchange → `/products/freight-exchange`
+   - Pathwell Connect Analytics Engine → `/products/analytics-engine`
    - Pathwell Connect Visibility Engine → `/products/visibility-engine`
    - Pathwell Connect Audit Engine → `/products/audit-engine`
    - Pathwell Connect TMS Bridge → `/products/tms-bridge`
@@ -57,6 +58,7 @@ The mobile navigation mirrors the desktop structure with collapsible sections:
 #### 2. **Products** (Collapsible)
    - Pathwell Connect Carrier Hub → `/products/carrier-hub`
    - Pathwell Connect Freight Exchange → `/products/freight-exchange`
+   - Pathwell Connect Analytics Engine → `/products/analytics-engine`
    - Pathwell Connect Visibility Engine → `/products/visibility-engine`
    - Pathwell Connect Audit Engine → `/products/audit-engine`
    - Pathwell Connect TMS Bridge → `/products/tms-bridge`
@@ -97,6 +99,7 @@ The mobile navigation mirrors the desktop structure with collapsible sections:
 ### Product Pages
 - `/products/carrier-hub`
 - `/products/freight-exchange`
+- `/products/analytics-engine`
 - `/products/visibility-engine`
 - `/products/audit-engine`
 - `/products/tms-bridge`

@@ -21,6 +21,7 @@ export default function Nav() {
   const productLinks = [
     { label: "Pathwell Connect Carrier Hub", href: "/products/carrier-hub" },
     { label: "Pathwell Connect Freight Exchange", href: "/products/freight-exchange" },
+    { label: "Pathwell Connect Analytics Engine", href: "/products/analytics-engine" },
     { label: "Pathwell Connect Visibility Engine", href: "/products/visibility-engine" },
     { label: "Pathwell Connect Audit Engine", href: "/products/audit-engine" },
     { label: "Pathwell Connect TMS Bridge", href: "/products/tms-bridge" },
