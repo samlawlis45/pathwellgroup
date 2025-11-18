@@ -14,6 +14,7 @@ export default function IntegrationPage() {
 
   const integrationCapabilities = [
     {
+      id: "erp-integration",
       title: "ERP / TMS / WMS Integration",
       description: "Unify planning, execution, and financial systems:",
       bullets: [
@@ -25,6 +26,7 @@ export default function IntegrationPage() {
       ],
     },
     {
+      id: "carrier-connectivity",
       title: "Carrier & Parcel Connectivity",
       description: "Connect to every mode and carrier:",
       bullets: [
@@ -34,16 +36,19 @@ export default function IntegrationPage() {
       ],
     },
     {
+      id: "supplier-integration",
       title: "Supplier & Retail Compliance Integration",
       description: "Support multi-party supply chains:",
       bullets: ["ASN compliance", "Routing and appointment scheduling", "VMI and replenishment signals"],
     },
     {
+      id: "visibility-streaming",
       title: "Visibility & Event Streaming",
       description: "Real-time supply chain visibility:",
       bullets: ["Telemetry, IoT, cold chain", "Transportation visibility APIs", "Exception-based event routing"],
     },
     {
+      id: "data-pipelines",
       title: "Data Pipelines & Analytics Integration",
       description: "Enable supply chain intelligence:",
       bullets: ["ETL/ELT pipelines", "Consolidated reporting", "Supply chain KPIs"],
@@ -224,7 +229,11 @@ export default function IntegrationPage() {
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">Core Integration Capabilities</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {integrationCapabilities.map((capability) => (
-              <div key={capability.title} className="bg-white p-6 rounded-lg shadow border border-gray-200">
+              <div
+                key={capability.title}
+                id={capability.id}
+                className="bg-white p-6 rounded-lg shadow border border-gray-200"
+              >
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">{capability.title}</h3>
                 <p className="text-gray-600 mb-4">{capability.description}</p>
                 <ul className="space-y-2 text-gray-600">

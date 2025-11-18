@@ -6,56 +6,44 @@
 
 ### Desktop Navigation
 
-#### 1. **Logistics** (Dropdown)
-   - **Execution Services** (Section Header)
-     - Freight Brokerage → `/solutions/logistics`
-     - Managed Transportation (4PL) → `/solutions/logistics`
-     - Parcel Optimization → `/solutions/connect/parcel`
-   
-   - **Shippers** (Sub-dropdown)
-     - Shipper Solutions → `/solutions/logistics/shippers`
-   
-   - **Carriers** (Sub-dropdown)
-     - Carrier Solutions → `/solutions/logistics/carriers`
-     - Become a Carrier → `/solutions/logistics/carriers`
-     - EDI Connectivity → `/solutions/connect`
+#### 1. **Shippers** (Dropdown)
+   - Shipping with Pathwell → `/solutions/logistics/shippers`
+   - Shipper Portal → `/portal/shippers`
+   - Our People → `/our-people`
 
-#### 2. **Solutions** (Dropdown)
-   - **Integration & Connectivity** (Sub-dropdown)
-     - System Integration (ERP/TMS/WMS) → `/solutions/connect`
-     - EDI Connectivity → `/solutions/connect`
-     - API Connectivity → `/solutions/connect`
-     - Carrier & Partner Onboarding → `/solutions/connect`
-     - **TMS Solutions** (Section Header)
-       - Oracle Transportation Management (OTM) → `/solutions/connect/tms`
-       - SAP TM → `/solutions/connect/tms`
-       - Blue Yonder → `/solutions/connect/tms`
-   
-   - **Technology Services** (Sub-dropdown)
-     - Supply Chain Data Engineering → `/solutions/technology`
-     - Visibility & Telemetry → `/solutions/technology`
-     - Analytics & Reporting → `/solutions/technology`
+#### 2. **Carriers** (Dropdown)
+   - Hauling with Pathwell → `/solutions/logistics/carriers`
+   - Carrier Portal → `/portal/carriers`
 
-#### 3. **Industries** (Dropdown)
-   - Building Materials → `/industries`
-   - Retail & E-Commerce → `/solutions/retail`
-   - Manufacturers → `/solutions/manufacturers`
-   - Chemicals → `/industries`
-   - Oil & Gas → `/industries`
-   - Medical Devices & Equipment → `/industries`
+#### 3. **Pathwell Connect** (Dropdown)
+   - Integration & Connectivity Services → `/solutions/integration`
+   - ERP / TMS / WMS Integration → `/solutions/integration#erp-integration`
+   - Carrier & Parcel Connectivity → `/solutions/integration#carrier-connectivity`
+   - Supplier & Retail Integration → `/solutions/integration#supplier-integration`
+   - Visibility & Event Streaming → `/solutions/integration#visibility-streaming`
+   - Data Pipelines & Analytics Integration → `/solutions/integration#data-pipelines`
 
-#### 4. **Insights** (Dropdown)
-   - Blog → `/resources`
-   - Case Studies → `/resources`
-   - Whitepapers → `/resources`
+#### 4. **Platform** (Link)
+   - Pathwell Load Board → `/platform/load-board`
 
-#### 5. **Company** (Dropdown)
-   - About → `/about`
-   - Leadership → `/about#leadership`
-   - Why Pathwell → `/why-pathwell`
+#### 5. **Careers** (Link)
    - Careers → `/careers`
 
-#### 6. **Contact** (CTA Button)
+#### 6. **About** (Link)
+   - About Pathwell → `/about`
+
+#### 7. **Corporate Responsibility** (Link)
+   - Corporate Responsibility → `/company/responsibility`
+
+#### 8. **Resources** (Dropdown)
+   - Market Insights → `/resources#market-insights`
+   - Partnerships → `/resources#partnerships`
+   - Blog → `/resources#blog`
+   - Case Studies → `/resources#case-studies`
+   - News → `/resources#news`
+   - Glossary → `/resources#glossary`
+
+#### 9. **Contact** (CTA Button)
    - Contact → `/contact`
 
 ---
@@ -64,54 +52,36 @@
 
 The mobile navigation mirrors the desktop structure with collapsible sections:
 
-#### 1. **Logistics** (Collapsible)
-   - **Execution Services** (Section Header)
-     - Freight Brokerage → `/solutions/logistics`
-     - Managed Transportation (4PL) → `/solutions/logistics`
-     - Parcel Optimization → `/solutions/connect/parcel`
-   
-   - **Shippers** (Nested Collapsible)
-     - Shipper Solutions → `/solutions/logistics/shippers`
-   
-   - **Carriers** (Nested Collapsible)
-     - Carrier Solutions → `/solutions/logistics/carriers`
-     - Become a Carrier → `/solutions/logistics/carriers`
-     - EDI Connectivity → `/solutions/connect`
+#### 1. **Shippers** (Collapsible)
+   - Shipping with Pathwell → `/solutions/logistics/shippers`
+   - Shipper Portal → `/portal/shippers`
+   - Our People → `/our-people`
 
-#### 2. **Solutions** (Collapsible)
-   - **Integration & Connectivity** (Nested Collapsible)
-     - System Integration (ERP/TMS/WMS) → `/solutions/connect`
-     - EDI Connectivity → `/solutions/connect`
-     - API Connectivity → `/solutions/connect`
-     - Carrier & Partner Onboarding → `/solutions/connect`
-     - **TMS Solutions** (Section Header)
-       - Oracle Transportation Management (OTM) → `/solutions/connect/tms`
-       - SAP TM → `/solutions/connect/tms`
-       - Blue Yonder → `/solutions/connect/tms`
-   
-   - **Technology Services** (Nested Collapsible)
-     - Supply Chain Data Engineering → `/solutions/technology`
-     - Visibility & Telemetry → `/solutions/technology`
-     - Analytics & Reporting → `/solutions/technology`
+#### 2. **Carriers** (Collapsible)
+   - Hauling with Pathwell → `/solutions/logistics/carriers`
+   - Carrier Portal → `/portal/carriers`
 
-#### 3. **Industries** (Collapsible)
-   - Building Materials → `/industries`
-   - Retail & E-Commerce → `/solutions/retail`
-   - Manufacturers → `/solutions/manufacturers`
-   - Chemicals → `/industries`
-   - Oil & Gas → `/industries`
-   - Medical Devices & Equipment → `/industries`
+#### 3. **Pathwell Connect** (Collapsible)
+   - Integration & Connectivity Services → `/solutions/integration`
+   - ERP / TMS / WMS Integration → `/solutions/integration#erp-integration`
+   - Carrier & Parcel Connectivity → `/solutions/integration#carrier-connectivity`
+   - Supplier & Retail Integration → `/solutions/integration#supplier-integration`
+   - Visibility & Event Streaming → `/solutions/integration#visibility-streaming`
+   - Data Pipelines & Analytics Integration → `/solutions/integration#data-pipelines`
 
-#### 4. **Insights** (Collapsible)
-   - Blog → `/resources`
-   - Case Studies → `/resources`
-   - Whitepapers → `/resources`
+#### 4. **Resources** (Collapsible)
+   - Market Insights → `/resources#market-insights`
+   - Partnerships → `/resources#partnerships`
+   - Blog → `/resources#blog`
+   - Case Studies → `/resources#case-studies`
+   - News → `/resources#news`
+   - Glossary → `/resources#glossary`
 
-#### 5. **Company** (Collapsible)
-   - About → `/about`
-   - Leadership → `/about#leadership`
-   - Why Pathwell → `/why-pathwell`
+#### 5. **Primary Links**
+   - Platform → `/platform/load-board`
    - Careers → `/careers`
+   - About → `/about`
+   - Corporate Responsibility → `/company/responsibility`
 
 #### 6. **Contact** (Link)
    - Contact → `/contact`
@@ -124,26 +94,21 @@ The mobile navigation mirrors the desktop structure with collapsible sections:
 - `/` - Homepage
 - `/contact` - Contact page
 
-### Solutions Pages
-- `/solutions/logistics` - Logistics solutions
+### Solutions & Platform Pages
 - `/solutions/logistics/shippers` - Shipper solutions
 - `/solutions/logistics/carriers` - Carrier solutions
-- `/solutions/connect` - Integration & connectivity
-- `/solutions/connect/tms` - TMS solutions
-- `/solutions/connect/parcel` - Parcel optimization
-- `/solutions/technology` - Technology services
-- `/solutions/retail` - Retail & e-commerce solutions
-- `/solutions/manufacturers` - Manufacturing solutions
-
-### Industry Pages
-- `/industries` - Industries overview page
+- `/solutions/integration` - Integration & Connectivity Services
+- `/platform/load-board` - Pathwell Load Board
+- `/portal/shippers` - Shipper Portal access
+- `/portal/carriers` - Carrier Portal access
 
 ### Resources Pages
-- `/resources` - Resources (Blog, Case Studies, Whitepapers)
+- `/resources` - Resource hub (sections: Market Insights, Partnerships, Blog, Case Studies, News, Glossary)
 
 ### Company Pages
+- `/our-people` - Our People
 - `/about` - About page
-- `/why-pathwell` - Why Pathwell page
+- `/company/responsibility` - Corporate responsibility
 - `/careers` - Careers page
 
 ---
