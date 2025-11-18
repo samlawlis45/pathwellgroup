@@ -20,13 +20,16 @@
    - Pathwell Connect Audit Engine → `/products/audit-engine`
    - Pathwell Connect TMS Bridge → `/products/tms-bridge`
 
-#### 3. **Who We Serve** (Dropdown)
+#### 3. **Technology** (Dropdown)
+   - IntelligentLedger™ → `/technology/intelligent-ledger`
+
+#### 4. **Who We Serve** (Dropdown)
    - Shippers → `/industries/shippers`
    - Brokers & 3PLs → `/industries/brokers`
    - Carriers → `/industries/carriers`
    - E-Commerce & Retail → `/industries/retail`
 
-#### 4. **Resources** (Dropdown)
+#### 5. **Resources** (Dropdown)
    - Market Insights → `/resources#market-insights`
    - Partnerships → `/resources#partnerships`
    - Blog → `/resources#blog`
@@ -34,13 +37,13 @@
    - News → `/resources#news`
    - Glossary → `/resources#glossary`
 
-#### 5. **Company** (Dropdown)
+#### 6. **Company** (Dropdown)
    - About → `/about`
    - Our People → `/our-people`
    - Careers → `/careers`
    - Corporate Responsibility → `/company/responsibility`
 
-#### 6. **Contact** (CTA Button)
+#### 7. **Contact** (CTA Button)
    - Contact → `/contact`
 
 ---
@@ -63,13 +66,16 @@ The mobile navigation mirrors the desktop structure with collapsible sections:
    - Pathwell Connect Audit Engine → `/products/audit-engine`
    - Pathwell Connect TMS Bridge → `/products/tms-bridge`
 
-#### 3. **Who We Serve** (Collapsible)
+#### 3. **Technology** (Collapsible)
+   - IntelligentLedger™ → `/technology/intelligent-ledger`
+
+#### 4. **Who We Serve** (Collapsible)
    - Shippers → `/industries/shippers`
    - Brokers & 3PLs → `/industries/brokers`
    - Carriers → `/industries/carriers`
    - E-Commerce & Retail → `/industries/retail`
 
-#### 4. **Resources** (Collapsible)
+#### 5. **Resources** (Collapsible)
    - Market Insights → `/resources#market-insights`
    - Partnerships → `/resources#partnerships`
    - Blog → `/resources#blog`
@@ -77,13 +83,13 @@ The mobile navigation mirrors the desktop structure with collapsible sections:
    - News → `/resources#news`
    - Glossary → `/resources#glossary`
 
-#### 5. **Company** (Collapsible)
+#### 6. **Company** (Collapsible)
    - About → `/about`
    - Our People → `/our-people`
    - Careers → `/careers`
    - Corporate Responsibility → `/company/responsibility`
 
-#### 6. **Contact** (Link)
+#### 7. **Contact** (Link)
    - Contact → `/contact`
 
 ---
@@ -103,6 +109,9 @@ The mobile navigation mirrors the desktop structure with collapsible sections:
 - `/products/visibility-engine`
 - `/products/audit-engine`
 - `/products/tms-bridge`
+
+### Technology Pages
+- `/technology/intelligent-ledger`
 
 ### Who We Serve Pages
 - `/industries/shippers`

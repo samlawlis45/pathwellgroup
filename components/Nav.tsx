@@ -27,6 +27,10 @@ export default function Nav() {
     { label: "Pathwell Connect TMS Bridge", href: "/products/tms-bridge" },
   ];
 
+  const technologyLinks = [
+    { label: "IntelligentLedger™", href: "/technology/intelligent-ledger" },
+  ];
+
   const whoWeServeLinks = [
     { label: "Shippers", href: "/industries/shippers" },
     { label: "Brokers & 3PLs", href: "/industries/brokers" },
@@ -53,6 +57,7 @@ export default function Nav() {
   const mobileDropdowns = [
     { key: "services", label: "Services", links: servicesLinks },
     { key: "products", label: "Products", links: productLinks },
+    { key: "technology", label: "Technology", links: technologyLinks },
     { key: "who-we-serve", label: "Who We Serve", links: whoWeServeLinks },
     { key: "resources", label: "Resources", links: resourceLinks },
     { key: "company", label: "Company", links: companyLinks },
@@ -69,7 +74,7 @@ export default function Nav() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             
             {/* Services Dropdown */}
             <div className="relative group">
@@ -101,6 +106,25 @@ export default function Nav() {
               <div className="absolute left-0 mt-2 w-72 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="py-2">
                   {productLinks.map((item) => (
+                    <Link key={item.label} href={item.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-blue">
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Technology Dropdown */}
+            <div className="relative group">
+              <button className="text-gray-700 hover:text-primary-blue transition-colors flex items-center font-medium">
+                Technology
+                <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  {technologyLinks.map((item) => (
                     <Link key={item.label} href={item.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-blue">
                       {item.label}
                     </Link>
