@@ -19,6 +19,59 @@ export default function ShippersPage() {
         </Container>
       </section>
 
+      {/* Shipper Solutions by Mode */}
+      <section className="py-20 bg-gray-50">
+        <Container>
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
+            Solutions by Mode
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                title: "Cross-Border",
+                description:
+                  "Seamless movement across borders with compliance automation, customs support, and multi-modal routing.",
+              },
+              {
+                title: "Freight Capacity Solutions",
+                description:
+                  "Access dependable, scalable capacity across truckload, LTL, drayage, parcel, and expedited modes.",
+              },
+              {
+                title: "Project Logistics",
+                description:
+                  "Heavy haul, multi-load coordination, white-glove services, and end-to-end project management.",
+              },
+              {
+                title: "International Solutions",
+                description:
+                  "Air, ocean, and forwarding coordination with document automation, carrier integrations, and regulatory support.",
+              },
+              {
+                title: "Visibility & Reporting",
+                description:
+                  "Unified visibility across modes with real-time tracking, exception alerts, and KPI dashboards.",
+              },
+              {
+                title: "Warehouse Connectivity & Distribution",
+                description:
+                  "Connect WMS, OMS, and TMS systems to streamline inventory, fulfillment, replenishment, and distribution flows.",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-md border border-gray-200"
+              >
+                <h3 className="text-xl font-bold mb-3 text-gray-900">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* Key Capabilities */}
       <section className="py-20">
         <Container>
@@ -40,12 +93,12 @@ export default function ShippersPage() {
               {
                 title: "Cold Chain Monitoring",
                 description:
-                  "Specialized temperature-controlled logistics with real-time monitoring and compliance tracking.",
+                  "Real-time temperature monitoring, excursion alerts, and regulatory compliance workflows.",
               },
               {
                 title: "Freight Charge Audit",
                 description:
-                  "Automated auditing of freight bills to catch errors, overcharges, and ensure billing accuracy.",
+                  "Automated auditing of freight bills to identify errors, overcharges, and recover lost spend.",
               },
             ].map((capability, index) => (
               <div
@@ -89,8 +142,8 @@ export default function ShippersPage() {
                 Lower Cost
               </h3>
               <p className="text-gray-600">
-                Optimize transportation spend through intelligent rate selection
-                and carrier negotiation.
+                Optimize transportation spend through intelligent rate
+                selection and carrier negotiation.
               </p>
             </div>
             <div className="text-center">
@@ -174,4 +227,3 @@ export default function ShippersPage() {
     </div>
   );
 }
-
