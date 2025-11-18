@@ -7,8 +7,8 @@ export default function IntegrationServicePage() {
       <section className="bg-primary-blue text-white py-20 lg:py-32">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">Integration & Connectivity</h1>
-            <p className="text-xl lg:text-2xl text-blue-100">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6">Integration & Connectivity</h1>
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
               End-to-end connectivity across all major systems in the supply chain ecosystem.
             </p>
           </div>
@@ -17,77 +17,74 @@ export default function IntegrationServicePage() {
 
       <section className="py-20">
         <Container>
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Overview</h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-gray-600 leading-relaxed">
                 Pathwell Connect delivers end-to-end connectivity across all major systems in the supply chain ecosystem. We modernize data flows, eliminate integration bottlenecks, and ensure clean, reliable interoperability.
               </p>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <span className="text-primary-blue font-bold mr-3">✓</span>
-                  API integration design and implementation
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary-blue font-bold mr-3">✓</span>
-                  EDI onboarding and mapping
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary-blue font-bold mr-3">✓</span>
-                  ERP / TMS / WMS connectivity packages
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary-blue font-bold mr-3">✓</span>
-                  Real-time shipment and order event orchestration
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary-blue font-bold mr-3">✓</span>
-                  Data quality monitoring
-                </li>
-              </ul>
             </div>
             <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Outcomes</h3>
-              <div className="space-y-6">
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-2xl mr-4">🚀</div>
-                  <div>
-                    <div className="font-bold text-gray-900">Faster Onboarding</div>
-                    <div className="text-sm text-gray-600">Connect partners in days, not months</div>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-2xl mr-4">🎯</div>
-                  <div>
-                    <div className="font-bold text-gray-900">Fewer Exceptions</div>
-                    <div className="text-sm text-gray-600">Automated data validation and error handling</div>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-2xl mr-4">💰</div>
-                  <div>
-                    <div className="font-bold text-gray-900">Lower Operational Overhead</div>
-                    <div className="text-sm text-gray-600">Reduce manual data entry and check calls</div>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-2xl mr-4">🔐</div>
-                  <div>
-                    <div className="font-bold text-gray-900">Unified Source of Truth</div>
-                    <div className="text-sm text-gray-600">Consistent data across all platforms</div>
-                  </div>
-                </div>
-              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Key Outcomes</h3>
+              <ul className="space-y-3">
+                {[
+                  "Faster onboarding",
+                  "Fewer exceptions",
+                  "Lower operational overhead",
+                  "A unified source of truth"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center text-gray-700">
+                    <svg className="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
+          </div>
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">What's Included</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "API Integration",
+                desc: "Design and implementation of modern REST/GraphQL APIs."
+              },
+              {
+                title: "EDI Onboarding",
+                desc: "Complete mapping and testing for standard EDI sets (204, 214, 210, etc.)."
+              },
+              {
+                title: "System Connectivity",
+                desc: "Pre-built packages for ERP, TMS, and WMS platforms."
+              },
+              {
+                title: "Event Orchestration",
+                desc: "Real-time shipment and order event routing and transformation."
+              },
+              {
+                title: "Data Quality",
+                desc: "Continuous monitoring and validation of data streams."
+              }
+            ].map((item, i) => (
+              <div key={i} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
 
-      <section className="py-20 bg-gray-900 text-white text-center">
+      <section className="py-20 bg-gray-50 text-center">
         <Container>
-          <h2 className="text-3xl font-bold mb-6">Ready to connect your ecosystem?</h2>
-          <Link href="/contact" className="bg-primary-blue text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-colors inline-block">
-            Get Started
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to connect your ecosystem?</h2>
+          <Link
+            href="/contact"
+            className="bg-primary-blue text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-colors inline-block"
+          >
+            Contact Us
           </Link>
         </Container>
       </section>

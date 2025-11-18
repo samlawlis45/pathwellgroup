@@ -7,9 +7,8 @@ export default function TMSBridgePage() {
       <section className="bg-primary-blue text-white py-20 lg:py-32">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-sm font-semibold uppercase tracking-wider mb-4">Product</p>
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">Pathwell Connect TMS Bridge</h1>
-            <p className="text-xl lg:text-2xl text-blue-100">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6">Pathwell Connect TMS Bridge</h1>
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
               A prebuilt integration suite enabling fast connectivity between ERP, WMS, carrier systems, and transportation platforms.
             </p>
           </div>
@@ -18,40 +17,46 @@ export default function TMSBridgePage() {
 
       <section className="py-20">
         <Container>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Features</h2>
-              <ul className="space-y-4">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-primary-blue rounded-full mr-3"></span>
-                  API/EDI connectors
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-primary-blue rounded-full mr-3"></span>
-                  Prebuilt mapping libraries
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-primary-blue rounded-full mr-3"></span>
-                  Event orchestration
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-primary-blue rounded-full mr-3"></span>
-                  Error and exception monitoring
-                </li>
-              </ul>
-            </div>
-            <div className="flex items-center justify-center bg-gray-50 rounded-2xl p-8">
-              <div className="text-center">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Accelerate your integration.</h3>
-                <Link href="/contact" className="text-primary-blue font-bold hover:underline">
-                  Learn more →
-                </Link>
+          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Key Features</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {[
+              {
+                title: "API/EDI Connectors",
+                desc: "Ready-to-deploy adapters for major ERPs (SAP, Oracle, NetSuite) and TMS platforms."
+              },
+              {
+                title: "Prebuilt Mapping Libraries",
+                desc: "Standardized data maps to accelerate implementation timelines."
+              },
+              {
+                title: "Event Orchestration",
+                desc: "Manage the flow of orders, shipments, and status updates between systems."
+              },
+              {
+                title: "Error & Exception Monitoring",
+                desc: "Real-time visibility into integration health and data quality."
+              }
+            ].map((item, i) => (
+              <div key={i} className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                <p className="text-gray-600">{item.desc}</p>
               </div>
-            </div>
+            ))}
           </div>
+        </Container>
+      </section>
+
+      <section className="py-20 bg-gray-50 text-center">
+        <Container>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Connect your systems faster.</h2>
+          <Link
+            href="/contact"
+            className="bg-primary-blue text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-colors inline-block"
+          >
+            Request Demo
+          </Link>
         </Container>
       </section>
     </div>
   );
 }
-
