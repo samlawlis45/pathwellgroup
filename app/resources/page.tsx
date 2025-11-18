@@ -2,81 +2,54 @@ import Container from "@/components/Container";
 import Link from "next/link";
 
 export default function ResourcesPage() {
-  const resourceSections = [
+  const contentItems = [
     {
-      id: "market-insights",
-      title: "Market Insights",
+      type: "Case Study",
+      title: "Reducing Parcel Costs by 23%",
       description:
-        "Forward-looking analysis on logistics, transportation, and supply chain resilience.",
-      items: [
-        {
-          label: "Quarterly Freight & Parcel Benchmark",
-          link: "#",
-        },
-        {
-          label: "Nearshoring Readiness Assessment",
-          link: "#",
-        },
-        {
-          label: "Global Capacity Outlook",
-          link: "#",
-        },
-      ],
+        "How a major e-commerce retailer optimized their parcel shipping strategy.",
+      date: "March 2024",
+      link: "#",
     },
     {
-      id: "partnerships",
-      title: "Partnerships",
+      type: "Blog Post",
+      title: "The Future of Supply Chain Visibility",
       description:
-        "Frameworks, playbooks, and co-selling programs for platform, carrier, and investment partners.",
-      items: [
-        { label: "Technology Partner Program Overview", link: "#"},
-        { label: "Strategic Alliance One-Pager", link: "#"},
-        { label: "Partner Launch Checklist", link: "#"},
-      ],
+        "Exploring emerging technologies and trends in supply chain transparency.",
+      date: "February 2024",
+      link: "#",
     },
     {
-      id: "blog",
-      title: "Blog",
+      type: "Whitepaper",
+      title: "Integration Best Practices for Modern Logistics",
       description:
-        "Editorial perspectives from the Pathwell team on modernization, integration, and execution.",
-      items: [
-        { label: "5 Signals Your Logistics Stack Needs an Upgrade", link: "#"},
-        { label: "Carrier Procurement in a Volatile Market", link: "#"},
-        { label: "Build vs. Buy for Supply Chain Integration", link: "#"},
-      ],
+        "A comprehensive guide to connecting your logistics systems effectively.",
+      date: "January 2024",
+      link: "#",
     },
     {
-      id: "case-studies",
-      title: "Case Studies",
+      type: "Case Study",
+      title: "Streamlining Carrier Onboarding",
       description:
-        "Detailed profiles of how enterprises modernize with Pathwell across industries and modes.",
-      items: [
-        { label: "Retail Parcel Optimization", link: "#"},
-        { label: "MedTech Cold Chain Visibility", link: "#"},
-        { label: "Manufacturing Control Tower Buildout", link: "#"},
-      ],
+        "How Pathwell Connect reduced onboarding time from weeks to days.",
+      date: "December 2023",
+      link: "#",
     },
     {
-      id: "news",
-      title: "News",
+      type: "Blog Post",
+      title: "5 Ways to Optimize Your Freight Spend",
       description:
-        "Announcements, press coverage, and noteworthy milestones across Pathwell Connect and Logistics.",
-      items: [
-        { label: "Pathwell Launches Integration Services Practice", link: "#"},
-        { label: "Strategic Partnership with Leading TMS Vendor", link: "#"},
-        { label: "Recognition in Supply Chain IT Innovators List", link: "#"},
-      ],
+        "Practical strategies for reducing transportation costs without sacrificing service.",
+      date: "November 2023",
+      link: "#",
     },
     {
-      id: "glossary",
-      title: "Glossary",
+      type: "Whitepaper",
+      title: "The Integrated Logistics Model",
       description:
-        "A working glossary covering logistics, technology, and connectivity terms for your teams.",
-      items: [
-        { label: "EDI vs. API Reference Guide", link: "#"},
-        { label: "Transportation Acronyms Explained", link: "#"},
-        { label: "Integration Architecture Components", link: "#"},
-      ],
+        "Why combining connectivity and execution delivers better results.",
+      date: "October 2023",
+      link: "#",
     },
   ];
 
@@ -86,39 +59,42 @@ export default function ResourcesPage() {
       <section className="bg-primary-blue text-white py-20 lg:py-32">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">Resources</h1>
+            <h1 className="text-5xl lg:text-6xl font-bold mb-6">
+              Resources
+            </h1>
             <p className="text-xl lg:text-2xl text-white">
-              Research, playbooks, and thought leadership to help every supply chain team modernize.
+              Access case studies, whitepapers, and resources to help optimize your supply chain.
             </p>
           </div>
         </Container>
       </section>
 
-      {/* Sections */}
+      {/* Content Grid */}
       <section className="py-20">
         <Container>
-          <div className="grid md:grid-cols-2 gap-8">
-            {resourceSections.map((section) => (
-              <div
-                key={section.id}
-                id={section.id}
-                className="bg-white rounded-lg shadow-md border border-gray-200 p-6"
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {contentItems.map((item, index) => (
+              <Link
+                key={index}
+                href={item.link}
+                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 overflow-hidden group"
               >
-                <p className="text-xs font-semibold text-primary-blue uppercase tracking-wide mb-2">
-                  {section.title}
-                </p>
-                <h2 className="text-2xl font-bold text-gray-900 mb-3">{section.title}</h2>
-                <p className="text-gray-600 mb-4">{section.description}</p>
-                <ul className="space-y-2 text-gray-700">
-                  {section.items.map((item) => (
-                    <li key={item.label}>
-                      <Link href={item.link} className="text-primary-blue hover:underline">
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-semibold text-primary-blue uppercase tracking-wide">
+                      {item.type}
+                    </span>
+                    <span className="text-xs text-gray-500">{item.date}</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-primary-blue transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">{item.description}</p>
+                  <div className="mt-4 text-primary-blue font-semibold text-sm group-hover:underline">
+                    Read More →
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </Container>
@@ -128,9 +104,12 @@ export default function ResourcesPage() {
       <section className="py-20 bg-gray-50">
         <Container>
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">Stay Updated</h2>
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">
+              Stay Updated
+            </h2>
             <p className="text-gray-600 mb-6">
-              Subscribe to receive the latest market insights, platform launches, and logistics best practices.
+              Subscribe to receive the latest insights and updates from Pathwell
+              Group.
             </p>
             <form className="flex flex-col sm:flex-row gap-4">
               <input
