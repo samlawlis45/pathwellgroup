@@ -2,70 +2,113 @@ import Container from "@/components/Container";
 import Link from "next/link";
 
 export default function ShippersPage() {
+  const modes = [
+    {
+      title: "Truckload Capacity",
+      description: "Access 50,000+ vetted carriers across dry van, reefer, and flatbed networks. Our digital matching engine finds the right truck instantly.",
+      icon: "🚛"
+    },
+    {
+      title: "LTL & Consolidation",
+      description: "Optimize less-than-truckload spend with dynamic routing, consolidation programs, and preferred tariff agreements.",
+      icon: "📦"
+    },
+    {
+      title: "Expedited & Critical",
+      description: "When time is the only KPI. Team drivers, air charter, and hot shot services monitored 24/7/365.",
+      icon: "⚡"
+    },
+    {
+      title: "Cross-Border",
+      description: "Seamless US-Mexico-Canada logistics. We handle customs coordination, transloading, and through-trailer service.",
+      icon: "🌐"
+    },
+    {
+      title: "Drayage & Port",
+      description: "First-mile container moves from all major North American ports and rail ramps. Integrated with steamship line visibility.",
+      icon: "⚓"
+    },
+    {
+      title: "Drop Trailer",
+      description: "Flexible drop pools to optimize facility throughput and driver detention. Create a virtual private fleet without the assets.",
+      icon: "🏗️"
+    }
+  ];
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-primary-blue text-white py-20 lg:py-32">
-        <Container>
+      <section className="relative bg-primary-blue text-white pt-24 pb-32 overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
+        <Container className="relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-              Shipper Solutions
+            <div className="inline-block px-4 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-semibold mb-6">
+              Modern Freight Execution
+            </div>
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6 tracking-tight">
+              Capacity on Demand. <br/> Service by Design.
             </h1>
-            <p className="text-xl lg:text-2xl text-white">
-              End-to-end logistics solutions designed for shippers who demand
-              efficiency, visibility, and cost control.
+            <p className="text-xl lg:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+              We combine a massive digital freight network with expert human operators to deliver reliable capacity in any market condition.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="bg-white text-primary-blue px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Get a Quote
+              </Link>
+              <Link
+                href="/portal/shippers"
+                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
+              >
+                Shipper Portal
+              </Link>
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* Shipper Solutions by Mode */}
-      <section className="py-20 bg-gray-50">
+      {/* Stats Bar */}
+      <section className="py-10 border-b border-gray-100 bg-white">
         <Container>
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
-            Solutions by Mode
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                title: "Cross-Border",
-                description:
-                  "Seamless movement across borders with compliance automation, customs support, and multi-modal routing.",
-              },
-              {
-                title: "Freight Capacity Solutions",
-                description:
-                  "Access dependable, scalable capacity across truckload, LTL, drayage, parcel, and expedited modes.",
-              },
-              {
-                title: "Project Logistics",
-                description:
-                  "Heavy haul, multi-load coordination, white-glove services, and end-to-end project management.",
-              },
-              {
-                title: "International Solutions",
-                description:
-                  "Air, ocean, and forwarding coordination with document automation, carrier integrations, and regulatory support.",
-              },
-              {
-                title: "Visibility & Reporting",
-                description:
-                  "Unified visibility across modes with real-time tracking, exception alerts, and KPI dashboards.",
-              },
-              {
-                title: "Warehouse Connectivity & Distribution",
-                description:
-                  "Connect WMS, OMS, and TMS systems to streamline inventory, fulfillment, replenishment, and distribution flows.",
-              },
-            ].map((item, index) => (
+          <div className="grid grid-cols-3 gap-8 text-center divide-x divide-gray-100">
+            <div>
+              <div className="text-3xl font-bold text-gray-900 mb-1">98.5%</div>
+              <div className="text-xs text-gray-500 uppercase tracking-wide font-semibold">On-Time Pickup</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-gray-900 mb-1">&lt; 15 min</div>
+              <div className="text-xs text-gray-500 uppercase tracking-wide font-semibold">Avg. Quote Time</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-gray-900 mb-1">100%</div>
+              <div className="text-xs text-gray-500 uppercase tracking-wide font-semibold">Carrier Vetting</div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Modes Grid */}
+      <section className="py-24 bg-gray-50 bg-dot-pattern">
+        <Container>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Multi-Modal Solutions</h2>
+            <p className="text-lg text-gray-600">One partner for every load type. We simplify complexity through consolidation.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {modes.map((mode, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-md border border-gray-200"
+                className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary-blue/30 transition-all group"
               >
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  {item.title}
+                <div className="text-4xl mb-6 bg-gray-50 w-16 h-16 rounded-lg flex items-center justify-center group-hover:bg-primary-blue/10 group-hover:scale-110 transition-all duration-300">
+                  {mode.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-primary-blue transition-colors">
+                  {mode.title}
                 </h3>
-                <p className="text-gray-600">{item.description}</p>
+                <p className="text-gray-600 leading-relaxed">{mode.description}</p>
               </div>
             ))}
           </div>
@@ -73,153 +116,99 @@ export default function ShippersPage() {
       </section>
 
       {/* Key Capabilities */}
-      <section className="py-20">
+      <section className="py-24 bg-white">
         <Container>
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
-            Key Capabilities
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {[
-              {
-                title: "Smart Rate Selection",
-                description:
-                  "AI-powered rate shopping across carriers and modes to find the optimal balance of cost and service.",
-              },
-              {
-                title: "Connectivity Across Systems",
-                description:
-                  "Seamless integration with your ERP, TMS, and WMS systems for unified logistics management.",
-              },
-              {
-                title: "Cold Chain Monitoring",
-                description:
-                  "Real-time temperature monitoring, excursion alerts, and regulatory compliance workflows.",
-              },
-              {
-                title: "Freight Charge Audit",
-                description:
-                  "Automated auditing of freight bills to identify errors, overcharges, and recover lost spend.",
-              },
-            ].map((capability, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-md border border-gray-200"
-              >
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  {capability.title}
-                </h3>
-                <p className="text-gray-600">{capability.description}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Value Proposition */}
-      <section className="py-20 bg-gray-50">
-        <Container>
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
-            Value Proposition
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg
-                  className="w-10 h-10 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">
-                Lower Cost
-              </h3>
-              <p className="text-gray-600">
-                Optimize transportation spend through intelligent rate
-                selection and carrier negotiation.
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                The Pathwell <br/><span className="text-primary-blue">Digital Advantage.</span>
+              </h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                We don't just make phone calls. Our platform uses predictive analytics and API connectivity to source capacity before the market reacts.
               </p>
+              
+              <div className="space-y-8">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-blue-50 rounded-lg flex-shrink-0 flex items-center justify-center text-primary-blue font-bold text-xl">1</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">Smart Rate Selection</h3>
+                    <p className="text-gray-600">AI-powered pricing engines that benchmark your freight against real-time market indices to ensure you never overpay.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-blue-50 rounded-lg flex-shrink-0 flex items-center justify-center text-primary-blue font-bold text-xl">2</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">Automated Compliance</h3>
+                    <p className="text-gray-600">Every carrier is monitored daily for safety ratings, insurance coverage, and operating authority changes.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-blue-50 rounded-lg flex-shrink-0 flex items-center justify-center text-primary-blue font-bold text-xl">3</div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">Real-Time Visibility</h3>
+                    <p className="text-gray-600">MacroPoint, project44, and FourKites ready. Track your freight from pickup to delivery with shareable links.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="w-20 h-20 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg
-                  className="w-10 h-10 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                  />
-                </svg>
+            <div className="bg-gray-900 p-8 rounded-2xl shadow-2xl text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary-blue opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+              <h3 className="text-2xl font-bold mb-6 border-b border-gray-700 pb-4">Execution Metrics</h3>
+              <div className="space-y-6">
+                <div>
+                  <div className="flex justify-between mb-2 text-sm font-medium text-gray-400">
+                    <span>Tender Acceptance</span>
+                    <span>96.4%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
+                    <div className="h-full bg-green-500 w-[96%]"></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-2 text-sm font-medium text-gray-400">
+                    <span>On-Time Delivery</span>
+                    <span>98.2%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
+                    <div className="h-full bg-primary-blue w-[98%]"></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-2 text-sm font-medium text-gray-400">
+                    <span>Tracking Compliance</span>
+                    <span>99.1%</span>
+                  </div>
+                  <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
+                    <div className="h-full bg-purple-500 w-[99%]"></div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">
-                Higher Visibility
-              </h3>
-              <p className="text-gray-600">
-                Real-time tracking and comprehensive reporting across your
-                entire supply chain.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-20 h-20 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg
-                  className="w-10 h-10 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
+              <div className="mt-8 p-4 bg-gray-800 rounded-lg border border-gray-700">
+                <p className="text-sm text-gray-300 italic">
+                  "Pathwell's digital approach reduced our spot market exposure by 40% in the first quarter."
+                </p>
+                <p className="text-xs text-gray-500 mt-2 font-bold uppercase">- Director of Logistics, CPG Retailer</p>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">
-                Single Partner
-              </h3>
-              <p className="text-gray-600">
-                One partner for connectivity, execution, and advisory services.
-                Simplify your vendor relationships.
-              </p>
             </div>
           </div>
         </Container>
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-primary-blue text-white">
+      <section className="py-24 bg-primary-blue">
         <Container>
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold mb-6">
-              Ready to Optimize Your Shipping Operations?
+            <h2 className="text-4xl font-bold mb-6 text-white">
+              Ready to Modernize Your Network?
             </h2>
-            <p className="text-xl mb-8 text-white">
-              Let's discuss how Pathwell can help you reduce costs and improve
-              visibility.
+            <p className="text-xl mb-10 text-blue-100">
+              Stop settling for legacy brokerage. Experience the difference of a digitally connected partner.
             </p>
             <Link
               href="/contact"
-              className="bg-white text-primary-blue px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors inline-block"
+              className="bg-white text-primary-blue px-8 py-4 rounded-lg font-bold hover:bg-gray-50 transition-colors inline-block shadow-lg"
             >
-              Get Started
+              Start Shipping
             </Link>
           </div>
         </Container>
