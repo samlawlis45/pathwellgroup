@@ -4,54 +4,58 @@ import Link from "next/link";
 export default function CarriersPage() {
   return (
     <div className="min-h-screen bg-white">
-      <section className="bg-primary-blue text-white py-20 lg:py-32">
+      {/* Hero Section */}
+      <section className="bg-primary-blue text-white py-20 lg:py-32 dot-pattern">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">For Carriers</h1>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-              Connect directly with your shipper and broker customers through simple, modern integration and operational support.
+            <p className="text-xl lg:text-2xl text-blue-100 max-w-2xl mx-auto mb-8">
+              Get paid faster and access premium freight with a single digital profile.
             </p>
+            <Link
+              href="/contact"
+              className="bg-white text-primary-blue px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors inline-block"
+            >
+              Join the Network
+            </Link>
           </div>
         </Container>
       </section>
 
-      <section className="py-20">
+      {/* Core Value Proposition */}
+      <section className="py-20 bg-white">
         <Container>
-          <div className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed mb-12">
+          <div className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed mb-12 text-center">
             <p>
-              Get paid faster, reduce empty miles, and build stronger relationships with your customers through seamless digital connectivity.
+              Stop faxing paperwork and chasing payments. Pathwell Connect creates a <strong>Digital Wallet</strong> for your fleet, storing your compliance docs, insurance, and performance history to automate onboarding with thousands of shippers.
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Faster Payment</h3>
-              <p className="text-gray-600">Automated POD submission and invoice processing.</p>
+            <div className="bg-gray-50 p-8 rounded-xl border border-gray-200 tech-card">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Faster Pay</h3>
+              <p className="text-gray-600">Submit PODs digitally and trigger instant payment workflows.</p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <div className="bg-gray-50 p-8 rounded-xl border border-gray-200 tech-card">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">One-Click Onboarding</h3>
+              <p className="text-gray-600">Share your "Verified Carrier" profile with any broker or shipper in the network.</p>
+            </div>
+            <div className="bg-gray-50 p-8 rounded-xl border border-gray-200 tech-card">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+              </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Load Access</h3>
-              <p className="text-gray-600">View and bid on freight opportunities in real-time.</p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Simplicity</h3>
-              <p className="text-gray-600">One portal to manage onboarding and compliance.</p>
+              <p className="text-gray-600">Get matched with loads that fit your lane preferences and equipment type.</p>
             </div>
           </div>
-        </Container>
-      </section>
-
-      <section className="py-20 bg-gray-50 text-center">
-        <Container>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Join the network.</h2>
-          <Link
-            href="/contact"
-            className="bg-primary-blue text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-colors inline-block"
-          >
-            Contact Us
-          </Link>
         </Container>
       </section>
     </div>
   );
 }
-
