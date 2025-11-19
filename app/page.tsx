@@ -23,10 +23,10 @@ export default function Home() {
         <Container className="relative z-20">
           <div className="text-center max-w-5xl mx-auto">
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight">
-              Integrated Freight Operations <br /> for Modern Supply Chains
+              The Source-of-Truth Layer <br /> for the Modern Supply Chain
             </h1>
             <p className="text-xl lg:text-2xl mb-10 text-gray-100 max-w-3xl mx-auto leading-relaxed">
-              A unified suite of logistics and connectivity services designed to simplify how shippers, brokers, and carriers integrate, operate, and optimize their freight networks.
+              The data and integration brain + attribution ledger + freight analytics engine. We connect every system, partner, and event into a single governed reality.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -36,11 +36,44 @@ export default function Home() {
                 Get Started
               </Link>
               <Link
-                href="/services/integration"
+                href="/technology/intelligent-ledger"
                 className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
               >
-                Explore Services
+                See the Ledger
               </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* The Source of Truth (New Section) */}
+      <section className="py-24 bg-white">
+        <Container>
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Signal vs. Truth</h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Other platforms predict <em>what</em> might go wrong (Signals). Pathwell Connect explains <em>why</em>, <em>where</em> it propagates, <em>who</em> is responsible, and <em>what</em> it will cost (Truth).
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="bg-gray-50 p-8 rounded-xl border border-gray-200 tech-card text-center">
+              <h3 className="text-2xl font-bold text-primary-blue mb-4">Integrate Everything</h3>
+              <p className="text-gray-600">
+                We don't just inject signals. We unify your ERP, TMS, WMS, Carriers, and Parcel data into one governed model.
+              </p>
+            </div>
+            <div className="bg-gray-50 p-8 rounded-xl border border-gray-200 tech-card text-center">
+              <h3 className="text-2xl font-bold text-primary-blue mb-4">Govern Attribution</h3>
+              <p className="text-gray-600">
+                Know the lineage, authorship, and trust score of every event. We provide explanation + accountability, not just prediction.
+              </p>
+            </div>
+            <div className="bg-gray-50 p-8 rounded-xl border border-gray-200 tech-card text-center">
+              <h3 className="text-2xl font-bold text-primary-blue mb-4">Quantify Impact</h3>
+              <p className="text-gray-600">
+                Automatically trace operational disruptions to financial outcomes. We connect the "Risk Score" to the Invoice.
+              </p>
             </div>
           </div>
         </Container>
@@ -78,7 +111,7 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Visibility & Control Tower */}
+            {/* Visibility & Control Tower Services */}
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group tech-card">
               <div className="w-12 h-12 bg-primary-blue/10 text-primary-blue rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary-blue group-hover:text-white transition-colors">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -145,61 +178,8 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Core Value Proposition */}
-      <section className="py-24 bg-white">
-        <Container>
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                One Model. <br /><span className="text-primary-blue">Total Connection.</span>
-              </h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Pathwell Connect unifies four historically disconnected areas of logistics into a single operating model.
-              </p>
-              <div className="space-y-6">
-                {[
-                  "Integration & Connectivity",
-                  "Visibility & Control Tower Operations",
-                  "Freight Audit & Analytics",
-                  "Carrier Network Management"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center p-4 bg-gray-50 rounded-lg border border-gray-100">
-                    <div className="w-8 h-8 bg-primary-blue text-white rounded-full flex items-center justify-center font-bold mr-4 shrink-0">
-                      {index + 1}
-                    </div>
-                    <span className="text-xl font-semibold text-gray-900">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="bg-gray-900 p-10 rounded-2xl text-white shadow-2xl relative overflow-hidden flex flex-col justify-center text-center">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-primary-blue opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-               <h3 className="text-3xl font-bold mb-6">The Result</h3>
-               <p className="text-xl text-gray-300 mb-8">
-                 A single, connected operating model that eliminates friction, reduces cost, and increases speed.
-               </p>
-               <div className="w-full h-1 bg-gray-700 mb-8"></div>
-               <div className="grid grid-cols-3 gap-4">
-                 <div>
-                   <div className="text-primary-blue font-bold text-lg mb-1">Friction</div>
-                   <div className="text-sm text-gray-400">Eliminated</div>
-                 </div>
-                 <div>
-                   <div className="text-primary-blue font-bold text-lg mb-1">Cost</div>
-                   <div className="text-sm text-gray-400">Reduced</div>
-                 </div>
-                 <div>
-                   <div className="text-primary-blue font-bold text-lg mb-1">Speed</div>
-                   <div className="text-sm text-gray-400">Increased</div>
-                 </div>
-               </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
       {/* Who We Serve */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-white">
         <Container>
           <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">Who We Serve</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -232,7 +212,7 @@ export default function Home() {
               <Link
                 key={index}
                 href={item.link}
-                className="bg-white p-8 rounded-xl hover:shadow-lg transition-all border border-gray-100 text-center group"
+                className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-all border border-gray-100 text-center group"
               >
                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{item.icon}</div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">{item.title}</h3>
@@ -289,7 +269,7 @@ export default function Home() {
       <section className="py-24 bg-primary-blue text-white text-center">
         <Container>
           <h2 className="text-4xl font-bold mb-8">
-            Transform your freight operations into <br/> a connected, modern logistics network.
+            Transform your freight operations into <br/> a connected, governed logistics network.
           </h2>
           <Link
             href="/contact"
