@@ -190,9 +190,14 @@ export default function Nav() {
               </div>
             </div>
 
-            <Link href="/contact" className="bg-primary-blue text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition-colors font-medium">
-              Contact
-            </Link>
+            <div className="flex items-center space-x-4">
+              <Link href="/login" className="text-gray-700 hover:text-primary-blue font-medium transition-colors">
+                Login
+              </Link>
+              <Link href="/contact" className="bg-primary-blue text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition-colors font-medium">
+                Contact
+              </Link>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -248,13 +253,22 @@ export default function Nav() {
               </div>
             ))}
 
-            <Link
-              href="/contact"
-              className="block py-2 text-gray-700 hover:text-primary-blue font-medium"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
+            <div className="border-t border-gray-200 pt-4 mt-4">
+              <Link
+                href="/login"
+                className="block py-2 text-gray-700 hover:text-primary-blue font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Login
+              </Link>
+              <Link
+                href="/contact"
+                className="block py-2 text-gray-700 hover:text-primary-blue font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
+              </Link>
+            </div>
           </div>
         )}
       </div>
