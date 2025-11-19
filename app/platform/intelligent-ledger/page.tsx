@@ -13,12 +13,6 @@ const INTEGRATION_STATUS = [
   { id: "PORT", name: "MarineTraffic", type: "External", status: "connected", lastSync: "1 hour ago", count: "Port Congestion" },
 ];
 
-const GRAPH_NODES = [
-  { id: "SUP-001", name: "Foxconn Shenzhen", type: "Supplier", risk: 78, impact: "High" },
-  { id: "PORT-LA", name: "Port of Los Angeles", type: "Port", risk: 45, impact: "Medium" },
-  { id: "DC-TX", name: "Dallas Distribution Center", type: "Facility", risk: 12, impact: "Low" },
-];
-
 const RISK_METRICS = {
   supplier_risk: { score: 78, trend: "up", label: "Critical", factor: "Labor Strike Risk" },
   route_risk: { score: 45, trend: "stable", label: "Moderate", factor: "Port Congestion" },
@@ -28,7 +22,7 @@ const RISK_METRICS = {
 
 const SHIPMENT_DATA = {
   id: "SHP-88392-X12",
-  status: "IN_TRANSIT",
+  status: "AUDIT_PENDING",
   origin: "Shenzhen, CN",
   destination: "Dallas, TX",
   carrier: "Maersk / Swift",
@@ -36,12 +30,19 @@ const SHIPMENT_DATA = {
   margin: "$450.00",
   driver_phone: "+1 (555) 019-2834",
   events: [
-    { id: "EVT-001", type: "PO_CREATED", timestamp: "2023-10-20 08:00", auth: "SAP ERP", actor: "Procurement" },
-    { id: "EVT-002", type: "PRODUCTION_DELAY", timestamp: "2023-10-22 14:30", auth: "Supplier Portal", actor: "Foxconn Rep", risk: true },
-    { id: "EVT-003", type: "BOOKING_CONFIRMED", timestamp: "2023-10-23 09:15", auth: "Maersk API", actor: "Carrier System" },
-    { id: "EVT-004", type: "GATE_IN_ORIGIN", timestamp: "2023-10-24 11:00", auth: "Terminal OS", actor: "Port Authority" },
+    { id: "EVT-001", type: "TENDER_ACCEPTED", timestamp: "2023-10-20 08:00", auth: "Carrier API v1", actor: "Maersk System", license: "STD_COMMERCIAL" },
+    { id: "EVT-002", type: "GATE_IN_ORIGIN", timestamp: "2023-10-24 11:00", auth: "Terminal OS", actor: "Port Authority", license: "GOV_OPEN" },
+    { id: "EVT-003", type: "ETA_UPDATE (+2 Days)", timestamp: "2023-10-26 14:30", auth: "Project44 Signal", actor: "Visibility Engine", risk: true, license: "PARTNER_SHARED" },
+    { id: "EVT-004", type: "INVOICE_RECEIVED", timestamp: "2023-11-02 09:00", auth: "EDI 210 Gateway", actor: "Finance System", license: "INTERNAL_CONF" },
+    { id: "EVT-005", type: "AUDIT_EXCEPTION", timestamp: "2023-11-02 09:05", auth: "Audit Ruleset v1", actor: "Pathwell Audit Engine", risk: true, license: "IP_PROTECTED" },
   ],
 };
+
+const REVENUE_DATA = [
+  { id: "REV-001", item: "Carrier API Connector v1", author: "Partner A", type: "Royalty", amount: "$0.45", status: "PAID" },
+  { id: "REV-002", item: "Audit Ruleset v1", author: "Pathwell IP", type: "Internal", amount: "$1.20", status: "RECOGNIZED" },
+  { id: "REV-003", item: "Platform Tax (Ext. Exposure)", author: "Pathwell Protocol", type: "Tax", amount: "$0.15", status: "ESCROW_HOLD" },
+];
 
 // --- TYPES ---
 
@@ -102,7 +103,7 @@ export default function IntelligentLedgerDashboard() {
             { id: 1, label: "1. Data & Integration", sub: "The Foundation" },
             { id: 2, label: "2. Ledger Graph", sub: "Digital Twin" },
             { id: 3, label: "3. Risk Engine", sub: "Impact Analysis" },
-            { id: 4, label: "4. Governance", sub: "Policy & Control" },
+            { id: 4, label: "4. Governance", sub: "Policy & Econ" },
             { id: 5, label: "5. App Modules", sub: "Actionable Insights" },
           ].map((layer) => (
             <button
@@ -223,8 +224,9 @@ export default function IntelligentLedgerDashboard() {
                         <div className={`absolute -left-[9px] top-0 w-4 h-4 rounded-full border-2 ${evt.risk ? 'bg-red-50 border-red-500' : 'bg-white border-primary-blue'}`}></div>
                         <div className="text-sm font-bold text-gray-900">{evt.type}</div>
                         <div className="text-xs text-gray-500 mb-1">{evt.timestamp}</div>
-                        <div className="text-xs font-mono bg-gray-50 inline-block px-2 py-1 rounded border border-gray-200">
-                          AUTH: {evt.auth}
+                        <div className="flex flex-col gap-1 mt-1">
+                           <span className="text-xs font-mono text-gray-500">AUTH: <span className="text-primary-blue">{evt.auth}</span></span>
+                           <span className="text-xs font-mono text-gray-500">LIC: <span className="text-gray-700">{evt.license}</span></span>
                         </div>
                       </div>
                     ))}
@@ -316,7 +318,7 @@ export default function IntelligentLedgerDashboard() {
           {activeLayer === 4 && (
             <div className="p-8">
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-900">Layer 4: Governance & Policy</h2>
+                <h2 className="text-2xl font-bold text-gray-900">Layer 4: Governance & Economics</h2>
                 <div className="flex bg-gray-100 p-1 rounded-lg">
                   {(["admin", "shipper", "carrier"] as ViewMode[]).map((mode) => (
                     <button
@@ -334,14 +336,14 @@ export default function IntelligentLedgerDashboard() {
                 </div>
               </div>
               <p className="text-gray-600 mb-8 max-w-3xl">
-                Applying <strong>GHOST.ATTR</strong> for selective visibility and <strong>Policy Rules</strong> for automated compliance.
+                Applying <strong>GHOST.ATTR</strong> for visibility, <strong>Policy Rules</strong> for compliance, and <strong>ECON.ROY</strong> for economic routing.
               </p>
 
               <div className="grid lg:grid-cols-2 gap-8">
                 {/* Data Redaction Demo */}
                 <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                   <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
-                    <h3 className="font-bold text-gray-900">Secure Data View</h3>
+                    <h3 className="font-bold text-gray-900">Secure Data View (GHOST.ATTR)</h3>
                   </div>
                   <div className="p-6 space-y-4">
                     <div className="flex justify-between items-center py-2 border-b border-gray-100">
@@ -375,36 +377,70 @@ export default function IntelligentLedgerDashboard() {
                   </div>
                 </div>
 
-                {/* Active Policies */}
-                <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                {/* Economic Routing Panel (New) */}
+                 <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                  <div className="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+                    <h3 className="font-bold text-gray-900">Economic Ledger (ECON.*)</h3>
+                    <span className="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs rounded-full font-medium">Active Run</span>
+                  </div>
+                  <div className="p-0">
+                    <table className="w-full text-sm text-left">
+                      <thead className="bg-gray-50 text-gray-500 font-medium">
+                        <tr>
+                          <th className="px-6 py-3">Item / Asset</th>
+                          <th className="px-6 py-3">Attributed Author</th>
+                          <th className="px-6 py-3">Royalty/Tax</th>
+                          <th className="px-6 py-3">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-100">
+                        {REVENUE_DATA.map((rev) => (
+                          <tr key={rev.id}>
+                            <td className="px-6 py-3 font-medium text-gray-900">{rev.item}</td>
+                            <td className="px-6 py-3 text-gray-500">{rev.author}</td>
+                            <td className="px-6 py-3 font-mono text-gray-900">{rev.amount}</td>
+                            <td className="px-6 py-3">
+                              <span className={`px-2 py-1 rounded text-xs font-medium ${
+                                rev.status === "PAID" ? "bg-green-100 text-green-800" :
+                                rev.status === "ESCROW_HOLD" ? "bg-yellow-100 text-yellow-800" :
+                                "bg-gray-100 text-gray-800"
+                              }`}>
+                                {rev.status}
+                              </span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="p-4 bg-gray-50 border-t border-gray-200 text-xs text-gray-500">
+                     * Micro-royalties distributed automatically via ECON.ROY based on lineage utilization.
+                  </div>
+                </div>
+              </div>
+
+               {/* Policy Triggers (Below) */}
+              <div className="mt-8 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                   <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
-                    <h3 className="font-bold text-gray-900">Active Policy Triggers</h3>
+                    <h3 className="font-bold text-gray-900">Constitutional Enforcement (GOVERNANCE.ENFORCE)</h3>
                   </div>
                   <div className="p-6 space-y-4">
                     <div className="flex items-start space-x-3">
                       <div className="mt-1 w-2 h-2 rounded-full bg-red-500"></div>
                       <div>
-                        <p className="text-sm font-bold text-gray-900">High Risk Supplier Alert</p>
-                        <p className="text-xs text-gray-500">Triggered when Risk Score &gt; 75. Notifies Procurement.</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="mt-1 w-2 h-2 rounded-full bg-yellow-500"></div>
-                      <div>
-                        <p className="text-sm font-bold text-gray-900">Margin Erosion Warning</p>
-                        <p className="text-xs text-gray-500">Triggered when Est. Cost Impact &gt; $1,000.</p>
+                        <p className="text-sm font-bold text-gray-900">Audit Exception Hold (ECON.ESC)</p>
+                        <p className="text-xs text-gray-500">Invoice variance detected. Payment held in escrow until approved.</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
                       <div className="mt-1 w-2 h-2 rounded-full bg-green-500"></div>
                       <div>
                         <p className="text-sm font-bold text-gray-900">UFLPA Compliance Check</p>
-                        <p className="text-xs text-gray-500">Passed. No forced labor entities in lineage.</p>
+                        <p className="text-xs text-gray-500">Passed. Lineage verified against entity lists.</p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
             </div>
           )}
 
