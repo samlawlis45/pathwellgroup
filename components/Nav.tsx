@@ -49,6 +49,8 @@ export default function Nav() {
     { label: "Brokers & 3PLs", href: "/industries/brokers" },
     { label: "Carriers", href: "/industries/carriers" },
     { label: "E-Commerce & Retail", href: "/industries/retail" },
+    { label: "Forwarders", href: "/industries/forwarders" },
+    { label: "Public Sector & Consultancy", href: "/industries/public-sector" },
   ];
 
   const resourceLinks = [
