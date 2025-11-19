@@ -21,10 +21,16 @@ export default function Nav() {
   const productLinks = [
     { label: "Pathwell Connect Carrier Hub", href: "/products/carrier-hub" },
     { label: "Pathwell Connect Freight Exchange", href: "/products/freight-exchange" },
-    { label: "Pathwell Connect Analytics Engine", href: "/products/analytics-engine" },
+    { label: "Pathwell IntelligentLedger™", href: "/products/analytics-engine" },
     { label: "Pathwell Connect Visibility Engine", href: "/products/visibility-engine" },
     { label: "Pathwell Connect Audit Engine", href: "/products/audit-engine" },
     { label: "Pathwell Connect TMS Bridge", href: "/products/tms-bridge" },
+  ];
+
+  const solutionLinks = [
+    { label: "Risk-Optimized Logistics", href: "/solutions/risk-logistics" },
+    { label: "Risk-Optimized Procurement", href: "/solutions/risk-procurement" },
+    { label: "Compliance & ESG Governance", href: "/solutions/compliance-esg" },
   ];
 
   const technologyLinks = [
@@ -57,6 +63,7 @@ export default function Nav() {
   const mobileDropdowns = [
     { key: "services", label: "Services", links: servicesLinks },
     { key: "products", label: "Products", links: productLinks },
+    { key: "solutions", label: "Solutions", links: solutionLinks },
     { key: "technology", label: "Technology", links: technologyLinks },
     { key: "who-we-serve", label: "Who We Serve", links: whoWeServeLinks },
     { key: "resources", label: "Resources", links: resourceLinks },
@@ -106,6 +113,25 @@ export default function Nav() {
               <div className="absolute left-0 mt-2 w-72 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="py-2">
                   {productLinks.map((item) => (
+                    <Link key={item.label} href={item.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-blue">
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Solutions Dropdown */}
+            <div className="relative group">
+              <button className="text-gray-700 hover:text-primary-blue transition-colors flex items-center font-medium">
+                Solutions
+                <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className="absolute left-0 mt-2 w-72 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  {solutionLinks.map((item) => (
                     <Link key={item.label} href={item.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-blue">
                       {item.label}
                     </Link>
